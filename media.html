@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media | NJIT Solar Car</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .sc-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .sc-gallery-item {
+      border-radius: 10px; overflow: hidden;
+      background: #f5f5f5; aspect-ratio: 1;
+      position: relative; cursor: pointer;
+    }
+    .sc-gallery-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .25s ease;
+    }
+    .sc-gallery-item:hover img { transform: scale(1.04); }
+    .sc-gallery-item.wide { grid-column: span 2; aspect-ratio: 2/1; }
+    .sc-gallery-item.tall { grid-row: span 2; aspect-ratio: 1/2; }
+
+    .sc-gallery-empty {
+      grid-column: 1 / -1;
+      border: 1px dashed #d0d0d0; border-radius: 12px;
+      padding: 64px 32px; text-align: center;
+      color: #aaa; font-size: 14px; line-height: 1.7;
+    }
+    .sc-gallery-empty strong { display: block; font-size: 16px; color: #888; margin-bottom: 8px; font-weight: 500; }
+
+    .sc-social-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px;
+    }
+    .sc-social-card {
+      border: 1px solid #e8e8e8; border-radius: 12px; padding: 24px;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+      text-decoration: none; color: inherit; background: #fff;
+      transition: border-color .15s, background .15s;
+    }
+    .sc-social-card:hover { border-color: var(--red); background: #fff9f9; }
+    .sc-social-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sc-social-card h3 { font-size: 14px; font-weight: 500; }
+    .sc-social-card p { font-size: 13px; color: #666; line-height: 1.5; }
+    .sc-social-card span { font-size: 12px; color: var(--red); font-weight: 500; }
+
+    @media (max-width: 700px) {
+      .sc-gallery { grid-template-columns: repeat(2, 1fr); }
+      .sc-gallery-item.wide { grid-column: span 1; aspect-ratio: 1; }
+      .sc-gallery-item.tall { grid-row: span 1; aspect-ratio: 1; }
+      .sc-social-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="sc-root">
+
+  <!-- NAV -->
+  <nav class="sc-nav">
+    <a class="sc-logo" href="index.html">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#C0392B"/>
+        <circle cx="16" cy="13" r="5" fill="none" stroke="#fff" stroke-width="1.5"/>
+        <line x1="16" y1="5" x2="16" y2="3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="16" y1="23" x2="16" y2="21" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="8" y1="13" x2="6" y2="13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="26" y1="13" x2="24" y2="13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="10.3" y1="7.3" x2="8.9" y2="5.9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="21.7" y1="18.7" x2="23.1" y2="20.1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="21.7" y1="7.3" x2="23.1" y2="5.9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="10.3" y1="18.7" x2="8.9" y2="20.1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="8" y="22" width="16" height="4" rx="2" fill="#fff" opacity="0.9"/>
+        <rect x="12" y="26" width="2" height="2" fill="#fff" opacity="0.7"/>
+        <rect x="18" y="26" width="2" height="2" fill="#fff" opacity="0.7"/>
+      </svg>
+      <span class="sc-logo-text">NJIT Solar Car</span>
+    </a>
+    <ul class="sc-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="sponsors.html">Sponsors</a></li>
+      <li><a href="media.html" class="active">Media</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="mailto:solarcar@njit.edu" class="sc-contact-btn">Contact</a>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="sc-page-header">
+    <div class="sc-page-label">Gallery</div>
+    <h1>Media</h1>
+    <p>Photos and updates from the NJIT Solar Car Team. Follow us on social media for the latest from the build floor.</p>
+  </div>
+
+  <section class="sc-section">
+    <div class="sc-section-label">Photos</div>
+    <h2>Gallery</h2>
+
+    <div class="sc-gallery">
+      <div class="sc-gallery-item wide">
+        <img src="https://static.wixstatic.com/media/6a1b9b_a80b3c2d667541b689ef43e5c5655419~mv2.jpg/v1/fill/w_980,h_509,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/group%20solar%20car_edited_edited_edited.jpg" alt="Team photo" onerror="this.parentElement.style.background='var(--red-light)'" />
+      </div>
+      <div class="sc-gallery-item">
+        <img src="https://static.wixstatic.com/media/6a1b9b_dbb5b619c15645cfba676abb1784c7ac~mv2.jpeg/v1/fill/w_720,h_523,al_c,q_85,enc_avif,quality_auto/media.jpeg" alt="Solar car" onerror="this.parentElement.style.background='var(--red-light)'" />
+      </div>
+      <div class="sc-gallery-item">
+        <img src="https://static.wixstatic.com/media/6a1b9b_b72773cb48474d958a5774718fce3dbc~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_avif,quality_auto/solar%20car%20image.jpg" alt="Solar car build" onerror="this.parentElement.style.background='var(--red-light)'" />
+      </div>
+      <div class="sc-gallery-item">
+        <img src="https://static.wixstatic.com/media/6a1b9b_06487bf7dff349b5a20850fb0c205248~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/solarr%20soon.jpeg" alt="Coming soon" onerror="this.parentElement.style.background='var(--red-light)'" />
+      </div>
+      <div class="sc-gallery-item">
+        <img src="https://static.wixstatic.com/media/6a1b9b_06487bf7dff349b5a20850fb0c205248~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/solarr%20soon.jpeg" alt="Coming soon" onerror="this.parentElement.style.background='var(--red-light)'" />
+      </div>
+    </div>
+
+  </section>
+
+  <div class="sc-divider"></div>
+
+  <!-- SOCIAL -->
+  <section class="sc-section">
+    <div class="sc-section-label">Follow us</div>
+    <h2>Stay connected</h2>
+    <div class="sc-social-row">
+
+      <a class="sc-social-card" href="https://www.instagram.com/njitsolarcar/" target="_blank">
+        <div class="sc-social-icon" style="background:var(--red-light);">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3.5" stroke="#C0392B" stroke-width="1.3"/><circle cx="9" cy="9" r="3" stroke="#C0392B" stroke-width="1.3"/><circle cx="13" cy="5" r="0.8" fill="#993556"/></svg>
+        </div>
+        <h3>Instagram</h3>
+        <p>Build updates, team photos, and event coverage.</p>
+        <span>@njitsolarcar →</span>
+      </a>
+
+      <a class="sc-social-card" href="https://www.linkedin.com/in/njitsolarcarclub/" target="_blank">
+        <div class="sc-social-icon" style="background:var(--red-light);">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="14" height="14" rx="2" stroke="#C0392B" stroke-width="1.3"/><line x1="6" y1="8" x2="6" y2="13" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round"/><line x1="6" y1="5.5" x2="6" y2="6.5" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round"/><path d="M9 13V10a2 2 0 014 0v3" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round"/><line x1="9" y1="8" x2="9" y2="13" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <h3>LinkedIn</h3>
+        <p>Professional updates, milestones, and team news.</p>
+        <span>NJIT Solar Car Club →</span>
+      </a>
+
+      <a class="sc-social-card" href="https://tinyurl.com/njitsolar" target="_blank">
+        <div class="sc-social-icon" style="background:var(--red-light);">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C5.134 2 2 4.91 2 8.5c0 2.01 1.02 3.8 2.62 4.97L4 16l2.72-1.23C7.41 14.91 8.19 15 9 15c3.866 0 7-2.91 7-6.5S12.866 2 9 2z" stroke="var(--red)" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Discord</h3>
+        <p>Join our community server to connect with the team.</p>
+        <span>Join server →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="sc-divider"></div>
+
+  <!-- FOOTER -->
+  <footer class="sc-footer">
+    <div class="sc-footer-left">
+      <strong>NJIT Solar Car Team</strong><br>
+      323 Dr MLK Jr Blvd, Newark, NJ &nbsp;·&nbsp; solarcar@njit.edu<br>
+      © 2025 All rights reserved
+    </div>
+    <div class="sc-footer-links">
+      <a href="https://www.linkedin.com/in/njitsolarcarclub/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/njitsolarcar/" target="_blank">Instagram</a>
+      <a href="https://tinyurl.com/njitsolar" target="_blank">Discord</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

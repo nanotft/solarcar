@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sponsors | NJIT Solar Car</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .sc-sponsor-intro {
+      background: var(--red-light); border-radius: 12px;
+      padding: 32px; margin-bottom: 48px;
+      display: flex; justify-content: space-between; align-items: center; gap: 24px;
+      flex-wrap: wrap;
+    }
+    .sc-sponsor-intro p { font-size: 15px; line-height: 1.7; color: var(--red-dark); max-width: 520px; }
+    .sc-sponsor-intro-btns { display: flex; gap: 12px; flex-shrink: 0; }
+
+    .sc-tier-label {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+    }
+    .sc-tier-badge {
+      font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 20px;
+    }
+    .sc-tier-badge.platinum { background: #e8e8e8; color: #444; }
+    .sc-tier-badge.gold     { background: #FEF3C7; color: #92400E; }
+    .sc-tier-badge.silver   { background: #F1F5F9; color: #475569; }
+    .sc-tier-badge.bronze   { background: #FEF0E6; color: #9A3412; }
+    .sc-tier-line { flex: 1; height: 1px; background: #e8e8e8; }
+
+    .sc-sponsor-grid {
+      display: grid; gap: 16px; margin-bottom: 48px;
+    }
+    .sc-sponsor-grid.platinum { grid-template-columns: 1fr; }
+    .sc-sponsor-grid.gold     { grid-template-columns: repeat(2, 1fr); }
+    .sc-sponsor-grid.silver   { grid-template-columns: repeat(3, 1fr); }
+    .sc-sponsor-grid.bronze   { grid-template-columns: repeat(4, 1fr); }
+
+    .sc-sponsor-slot {
+      border: 1px solid #e8e8e8; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      padding: 28px 20px; background: #fff; min-height: 100px;
+    }
+    .sc-sponsor-slot img { max-width: 100%; max-height: 60px; object-fit: contain; }
+    .sc-sponsor-slot-empty {
+      font-size: 13px; color: #bbb; text-align: center; line-height: 1.5;
+    }
+
+    .sc-cta-box {
+      border: 1px dashed #f5c6c2; border-radius: 12px;
+      padding: 40px 32px; text-align: center; background: #fff9f9;
+      margin-bottom: 48px;
+    }
+    .sc-cta-box h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+    .sc-cta-box p { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .sc-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 700px) {
+      .sc-sponsor-grid.gold,
+      .sc-sponsor-grid.silver,
+      .sc-sponsor-grid.bronze { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+<div class="sc-root">
+
+  <!-- NAV -->
+  <nav class="sc-nav">
+    <a class="sc-logo" href="index.html">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#C0392B"/>
+        <circle cx="16" cy="13" r="5" fill="none" stroke="#fff" stroke-width="1.5"/>
+        <line x1="16" y1="5" x2="16" y2="3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="16" y1="23" x2="16" y2="21" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="8" y1="13" x2="6" y2="13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="26" y1="13" x2="24" y2="13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="10.3" y1="7.3" x2="8.9" y2="5.9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="21.7" y1="18.7" x2="23.1" y2="20.1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="21.7" y1="7.3" x2="23.1" y2="5.9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="10.3" y1="18.7" x2="8.9" y2="20.1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="8" y="22" width="16" height="4" rx="2" fill="#fff" opacity="0.9"/>
+        <rect x="12" y="26" width="2" height="2" fill="#fff" opacity="0.7"/>
+        <rect x="18" y="26" width="2" height="2" fill="#fff" opacity="0.7"/>
+      </svg>
+      <span class="sc-logo-text">NJIT Solar Car</span>
+    </a>
+    <ul class="sc-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="sponsors.html" class="active">Sponsors</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="mailto:solarcar@njit.edu" class="sc-contact-btn">Contact</a>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="sc-page-header">
+    <div class="sc-page-label">Support us</div>
+    <h1>Our sponsors</h1>
+    <p>Thank you to everyone who has supported the NJIT Solar Car project. Your contributions make it possible for students to gain real-world engineering experience.</p>
+  </div>
+
+  <section class="sc-section">
+
+    <!-- INTRO BANNER -->
+    <div class="sc-sponsor-intro">
+      <p>Interested in sponsoring us? We welcome material donations and financial contributions. Don't hesitate to reach out — we'd love to have you on board.</p>
+      <div class="sc-sponsor-intro-btns">
+        <a href="https://solarcar.njit.edu/_files/ugd/32beca_86bc003c58344b93badb6f9484dccc79.pdf" target="_blank" class="sc-btn-primary">Sponsorship packet →</a>
+        <a href="https://www.givecampus.com/campaigns/58761/donations/new?designation=njitsolarcarteam" target="_blank" class="sc-btn-secondary">Donate now</a>
+      </div>
+    </div>
+
+    <!-- PLATINUM -->
+    <div class="sc-tier-label">
+      <span class="sc-tier-badge platinum">Platinum</span>
+      <div class="sc-tier-line"></div>
+    </div>
+    <div class="sc-sponsor-grid platinum">
+      <div class="sc-sponsor-slot">
+        <img src="https://static.wixstatic.com/media/32beca_f5a11c3304ee4d479108d123efa1eb18~mv2.png/v1/fill/w_824,h_126,al_c,q_85,enc_avif,quality_auto/Pink%20Poppy%20Flowers.png" alt="Platinum sponsor" onerror="this.parentElement.innerHTML='<div class=\'sc-sponsor-slot-empty\'>Platinum sponsor logo</div>'" />
+      </div>
+    </div>
+
+    <!-- GOLD -->
+    <div class="sc-tier-label">
+      <span class="sc-tier-badge gold">Gold</span>
+      <div class="sc-tier-line"></div>
+    </div>
+    <div class="sc-sponsor-grid gold">
+      <div class="sc-sponsor-slot"><div class="sc-sponsor-slot-empty">Your logo here</div></div>
+      <div class="sc-sponsor-slot"><div class="sc-sponsor-slot-empty">Your logo here</div></div>
+    </div>
+
+    <!-- SILVER -->
+    <div class="sc-tier-label">
+      <span class="sc-tier-badge silver">Silver</span>
+      <div class="sc-tier-line"></div>
+    </div>
+    <div class="sc-sponsor-grid silver">
+      <div class="sc-sponsor-slot"><div class="sc-sponsor-slot-empty">Your logo here</div></div>
+      <div class="sc-sponsor-slot"><div class="sc-sponsor-slot-empty">Your logo here</div></div>
+      <div class="sc-sponsor-slot"><div class="sc-sponsor-slot-empty">Your logo here</div></div>
+    </div>
+
+    <!-- BRONZE -->
+    <div class="sc-tier-label">
+      <span class="sc-tier-badge bronze">Bronze</span>
+      <div class="sc-tier-line"></div>
+    </div>
+    <div class="sc-sponsor-grid bronze">
+      <div class="sc-sponsor-slot"><div class="sc-sponsor-slot-empty">Your logo here</div></div>
+      <div class="sc-sponsor-slot"><div class="sc-sponsor-slot-empty">Your logo here</div></div>
+      <div class="sc-sponsor-slot"><div class="sc-sponsor-slot-empty">Your logo here</div></div>
+      <div class="sc-sponsor-slot"><div class="sc-sponsor-slot-empty">Your logo here</div></div>
+    </div>
+
+    <!-- CTA -->
+    <div class="sc-cta-box">
+      <h3>Become a sponsor</h3>
+      <p>Support the next generation of sustainable engineers. Download our sponsorship packet to learn about partnership tiers and benefits.</p>
+      <div class="sc-cta-btns">
+        <a href="https://solarcar.njit.edu/_files/ugd/32beca_86bc003c58344b93badb6f9484dccc79.pdf" target="_blank" class="sc-btn-primary">Download packet →</a>
+        <a href="mailto:solarcar@njit.edu" class="sc-btn-secondary">Get in touch</a>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="sc-divider"></div>
+
+  <!-- FOOTER -->
+  <footer class="sc-footer">
+    <div class="sc-footer-left">
+      <strong>NJIT Solar Car Team</strong><br>
+      323 Dr MLK Jr Blvd, Newark, NJ &nbsp;·&nbsp; solarcar@njit.edu<br>
+      © 2025 All rights reserved
+    </div>
+    <div class="sc-footer-links">
+      <a href="https://www.linkedin.com/in/njitsolarcarclub/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/njitsolarcar/" target="_blank">Instagram</a>
+      <a href="https://tinyurl.com/njitsolar" target="_blank">Discord</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

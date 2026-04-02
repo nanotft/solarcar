@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | NJIT Solar Car</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .sc-hero {
+      padding: 64px 32px 48px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .sc-hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+      background: var(--red-light); color: var(--red);
+      padding: 4px 10px; border-radius: 20px; margin-bottom: 20px;
+    }
+    .sc-hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); }
+    .sc-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 38px; font-weight: 600; line-height: 1.15; margin-bottom: 16px;
+    }
+    .sc-hero h1 span { color: var(--red); }
+    .sc-hero p { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 28px; }
+    .sc-hero-btns { display: flex; gap: 12px; }
+    .sc-hero-visual {
+      background: #f5f5f5; border: 1px solid #e8e8e8;
+      border-radius: 12px; aspect-ratio: 4/3; overflow: hidden;
+    }
+    .sc-hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .sc-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: #e8e8e8;
+      border: 1px solid #e8e8e8; border-radius: 10px;
+      margin: 0 32px 48px; overflow: hidden;
+    }
+    .sc-stat { background: #fff; padding: 20px 24px; display: flex; flex-direction: column; gap: 4px; }
+    .sc-stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; }
+    .sc-stat-label { font-size: 12px; color: #888; }
+
+    .sc-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .sc-card {
+      background: #fff; border: 1px solid #e8e8e8;
+      border-radius: 12px; padding: 24px;
+    }
+    .sc-card-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+    }
+    .sc-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 8px; }
+    .sc-card p { font-size: 13px; line-height: 1.6; color: #666; }
+
+    @media (max-width: 700px) {
+      .sc-hero { grid-template-columns: 1fr; gap: 32px; padding: 40px 20px 32px; }
+      .sc-hero h1 { font-size: 28px; }
+      .sc-stats { grid-template-columns: repeat(2,1fr); margin: 0 20px 36px; }
+      .sc-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="sc-root">
+
+  <!-- NAV -->
+  <nav class="sc-nav">
+    <a class="sc-logo" href="index.html">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#C0392B"/>
+        <circle cx="16" cy="13" r="5" fill="none" stroke="#fff" stroke-width="1.5"/>
+        <line x1="16" y1="5" x2="16" y2="3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="16" y1="23" x2="16" y2="21" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="8" y1="13" x2="6" y2="13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="26" y1="13" x2="24" y2="13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="10.3" y1="7.3" x2="8.9" y2="5.9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="21.7" y1="18.7" x2="23.1" y2="20.1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="21.7" y1="7.3" x2="23.1" y2="5.9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="10.3" y1="18.7" x2="8.9" y2="20.1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="8" y="22" width="16" height="4" rx="2" fill="#fff" opacity="0.9"/>
+        <rect x="12" y="26" width="2" height="2" fill="#fff" opacity="0.7"/>
+        <rect x="18" y="26" width="2" height="2" fill="#fff" opacity="0.7"/>
+      </svg>
+      <span class="sc-logo-text">NJIT Solar Car</span>
+    </a>
+    <ul class="sc-nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="sponsors.html">Sponsors</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="mailto:solarcar@njit.edu" class="sc-contact-btn">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="sc-hero">
+    <div>
+      <div class="sc-hero-tag">
+        <div class="sc-hero-tag-dot"></div>
+        Student-run · Founded 2017
+      </div>
+      <h1>Building a <span>solar-powered</span> future at NJIT</h1>
+      <p>We design, build, and compete with a 100% solar-powered vehicle — giving students real engineering experience and promoting sustainable energy.</p>
+      <div class="sc-hero-btns">
+        <a href="mailto:solarcar@njit.edu" class="sc-btn-primary">Join the team →</a>
+        <a href="sponsors.html" class="sc-btn-secondary">Our sponsors</a>
+      </div>
+    </div>
+    <div class="sc-hero-visual">
+      <img src="https://static.wixstatic.com/media/6a1b9b_a80b3c2d667541b689ef43e5c5655419~mv2.jpg/v1/fill/w_980,h_509,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/group%20solar%20car_edited_edited_edited.jpg" alt="NJIT Solar Car Team" />
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="sc-stats">
+    <div class="sc-stat"><span class="sc-stat-num">70+</span><span class="sc-stat-label">Members</span></div>
+    <div class="sc-stat"><span class="sc-stat-num">100%</span><span class="sc-stat-label">Solar powered</span></div>
+    <div class="sc-stat"><span class="sc-stat-num">1</span><span class="sc-stat-label">Mission</span></div>
+    <div class="sc-stat"><span class="sc-stat-num">2017</span><span class="sc-stat-label">Founded</span></div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="sc-section">
+    <div class="sc-section-label">What we do</div>
+    <h2>Design. Build. Compete.</h2>
+    <div class="sc-cards">
+      <div class="sc-card">
+        <div class="sc-card-icon" style="background:var(--red-light);">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L11 7H16L12 10.5L13.5 16L9 12.5L4.5 16L6 10.5L2 7H7L9 2Z" stroke="var(--red)" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Our vision</h3>
+        <p>Build a competition-ready solar car to race against top universities, proving that sustainable engineering is the future of transportation.</p>
+      </div>
+      <div class="sc-card">
+        <div class="sc-card-icon" style="background:#E6F1FB;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6" stroke="#185FA5" stroke-width="1.3"/><path d="M9 6v3l2 2" stroke="#185FA5" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Our mission</h3>
+        <p>Empower students through hands-on technical work in systems engineering — open to all majors, no experience required.</p>
+      </div>
+      <div class="sc-card">
+        <div class="sc-card-icon" style="background:#FAEEDA;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="5" width="14" height="9" rx="2" stroke="#BA7517" stroke-width="1.3"/><path d="M6 5V4a1 1 0 011-1h4a1 1 0 011 1v1" stroke="#BA7517" stroke-width="1.3"/></svg>
+        </div>
+        <h3>Interdisciplinary</h3>
+        <p>From mechanical and electrical engineering to software and business — everyone has a role in building something that matters.</p>
+      </div>
+      <div class="sc-card">
+        <div class="sc-card-icon" style="background:#FBEAF0;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14l4-4 3 3 5-7" stroke="#993556" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Real-world experience</h3>
+        <p>Work on a full-size vehicle from concept to competition — the kind of project that stands out on any resume.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sc-divider"></div>
+
+  <!-- FOOTER -->
+  <footer class="sc-footer">
+    <div class="sc-footer-left">
+      <strong>NJIT Solar Car Team</strong><br>
+      323 Dr MLK Jr Blvd, Newark, NJ &nbsp;·&nbsp; solarcar@njit.edu<br>
+      © 2025 All rights reserved
+    </div>
+    <div class="sc-footer-links">
+      <a href="https://www.linkedin.com/in/njitsolarcarclub/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/njitsolarcar/" target="_blank">Instagram</a>
+      <a href="https://tinyurl.com/njitsolar" target="_blank">Discord</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
