@@ -6,24 +6,51 @@
   <title>Members | NJIT Solar Car</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .sc-board-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 48px; }
-    .sc-member-card { border: 1px solid #e8e8e8; border-radius: 12px; overflow: hidden; background: #fff; text-align: center; }
-    .sc-member-photo { width: 100%; aspect-ratio: 1; overflow: hidden; background: #f5f5f5; }
-    .sc-member-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-    .sc-member-photo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--red-light); }
-    .sc-member-photo-placeholder span { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: var(--red); }
+    .sc-board-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .sc-member-card {
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      text-align: center;
+    }
+    .sc-member-photo {
+      width: 100%; aspect-ratio: 1; overflow: hidden; background: #f5f5f5;
+    }
+    .sc-member-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+    }
+    .sc-member-photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--red-light);
+    }
+    .sc-member-photo-placeholder span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px; font-weight: 600; color: var(--red);
+    }
     .sc-member-info { padding: 14px 12px 16px; }
     .sc-member-info h3 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
     .sc-member-info p { font-size: 12px; color: var(--red); font-weight: 500; }
+
     .sc-subteams { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .sc-subteam-card { border: 1px solid #e8e8e8; border-radius: 12px; padding: 24px; background: #fff; }
-    .sc-subteam-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; background: var(--red-light); }
+    .sc-subteam-card {
+      border: 1px solid #e8e8e8; border-radius: 12px; padding: 24px; background: #fff;
+    }
+    .sc-subteam-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+    }
     .sc-subteam-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 8px; }
     .sc-subteam-card p { font-size: 13px; line-height: 1.6; color: #666; }
+
     @media (max-width: 700px) {
-      .sc-board-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-      .sc-member-info h3 { font-size: 13px; }
-      .sc-member-info p { font-size: 11px; }
+      .sc-board-grid { grid-template-columns: repeat(2, 1fr); }
       .sc-subteams { grid-template-columns: 1fr; }
     }
   </style>
@@ -31,27 +58,24 @@
 <body>
 <div class="sc-root">
 
-  <div class="sc-mobile-nav" id="mobileNav">
-    <div class="sc-mobile-nav-header">
-      <a class="sc-logo" href="index.html">
-        <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#C0392B"/><circle cx="16" cy="13" r="5" fill="none" stroke="#fff" stroke-width="1.5"/><rect x="8" y="22" width="16" height="4" rx="2" fill="#fff" opacity="0.9"/></svg>
-        <span class="sc-logo-text">NJIT Solar Car</span>
-      </a>
-      <button class="sc-mobile-close" onclick="closeMobileNav()">✕</button>
-    </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="members.html" class="active">Members</a></li>
-      <li><a href="sponsors.html">Sponsors</a></li>
-      <li><a href="media.html">Media</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-    <div class="sc-mobile-nav-footer"><a href="mailto:solarcar@njit.edu">Contact us</a></div>
-  </div>
-
+  <!-- NAV -->
   <nav class="sc-nav">
     <a class="sc-logo" href="index.html">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#C0392B"/><circle cx="16" cy="13" r="5" fill="none" stroke="#fff" stroke-width="1.5"/><line x1="16" y1="5" x2="16" y2="3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="23" x2="16" y2="21" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="13" x2="6" y2="13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><line x1="26" y1="13" x2="24" y2="13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><line x1="10.3" y1="7.3" x2="8.9" y2="5.9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><line x1="21.7" y1="18.7" x2="23.1" y2="20.1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><line x1="21.7" y1="7.3" x2="23.1" y2="5.9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><line x1="10.3" y1="18.7" x2="8.9" y2="20.1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><rect x="8" y="22" width="16" height="4" rx="2" fill="#fff" opacity="0.9"/><rect x="12" y="26" width="2" height="2" fill="#fff" opacity="0.7"/><rect x="18" y="26" width="2" height="2" fill="#fff" opacity="0.7"/></svg>
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#C0392B"/>
+        <circle cx="16" cy="13" r="5" fill="none" stroke="#fff" stroke-width="1.5"/>
+        <line x1="16" y1="5" x2="16" y2="3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="16" y1="23" x2="16" y2="21" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="8" y1="13" x2="6" y2="13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="26" y1="13" x2="24" y2="13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="10.3" y1="7.3" x2="8.9" y2="5.9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="21.7" y1="18.7" x2="23.1" y2="20.1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="21.7" y1="7.3" x2="23.1" y2="5.9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="10.3" y1="18.7" x2="8.9" y2="20.1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="8" y="22" width="16" height="4" rx="2" fill="#fff" opacity="0.9"/>
+        <rect x="12" y="26" width="2" height="2" fill="#fff" opacity="0.7"/>
+        <rect x="18" y="26" width="2" height="2" fill="#fff" opacity="0.7"/>
+      </svg>
       <span class="sc-logo-text">NJIT Solar Car</span>
     </a>
     <ul class="sc-nav-links">
@@ -62,85 +86,144 @@
       <li><a href="blog.html">Blog</a></li>
     </ul>
     <a href="mailto:solarcar@njit.edu" class="sc-contact-btn">Contact</a>
-    <button class="sc-hamburger" onclick="openMobileNav()" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
 
+  <!-- PAGE HEADER -->
   <div class="sc-page-header">
     <div class="sc-page-label">Our people</div>
     <h1>Meet the team</h1>
     <p>The NJIT Solar Car Team consists of four main subteams — electronics, software, mechanics, and business — led by a dedicated board of officers.</p>
   </div>
 
+  <!-- BOARD -->
   <section class="sc-section">
     <div class="sc-section-label">Leadership</div>
     <h2>Board members</h2>
     <div class="sc-board-grid">
+
+      <!-- Row 1 -->
       <div class="sc-member-card">
-        <div class="sc-member-photo"><img src="https://static.wixstatic.com/media/32beca_baa755a0f33e4535b7b0dd5a11586980~mv2.jpeg/v1/crop/x_28,y_28,w_518,h_443/fill/w_578,h_494,al_c,lg_1,q_80,enc_avif,quality_auto/IMG_9924.jpeg" alt="Ibrahim Feknous" onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>IF</span></div>'" /></div>
+        <div class="sc-member-photo">
+          <!-- Ibrahim: black shirt, smiling, glasses -->
+          <img src="https://static.wixstatic.com/media/32beca_efe445620beb41d0a2a25376d47bd88e~mv2.jpeg/v1/crop/x_602,y_0,w_4886,h_4159/fill/w_768,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_9426.jpeg" alt="Yassa Beshai" />
+        </div>
         <div class="sc-member-info"><h3>Ibrahim Feknous</h3><p>President</p></div>
       </div>
+
       <div class="sc-member-card">
-        <div class="sc-member-photo"><img src="https://static.wixstatic.com/media/32beca_f907684073ad4fe3b836bcdf60c98b89~mv2.jpeg/v1/crop/x_978,y_0,w_4113,h_3367/fill/w_672,h_550,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1776_JPEG.jpeg" alt="Mykola Radysh" onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>MR</span></div>'" /></div>
+        <div class="sc-member-photo">
+          <!-- Mykola: indoor selfie -->
+          <img src="https://static.wixstatic.com/media/32beca_578aa1d7b6784022bc022474a59178e0~mv2.jpeg/v1/crop/x_175,y_939,w_1950,h_1815/fill/w_980,h_912,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1559.jpeg" alt="Ricardo Flores"
+            onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>MR</span></div>'" />
+        </div>
         <div class="sc-member-info"><h3>Mykola Radysh</h3><p>Vice President</p></div>
       </div>
+
       <div class="sc-member-card">
-        <div class="sc-member-photo"><img src="https://static.wixstatic.com/media/32beca_efe445620beb41d0a2a25376d47bd88e~mv2.jpeg/v1/crop/x_602,y_0,w_4886,h_4159/fill/w_768,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_9426.jpeg" alt="Yassa Beshai" onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>YB</span></div>'" /></div>
-        <div class="sc-member-info"><h3>Yassa Beshai</h3><p>Treasurer & Sr. Project Manager</p></div>
+        <div class="sc-member-photo">
+          <!-- Yassa: city/night background, scarf -->
+          <img src="https://static.wixstatic.com/media/32beca_baa755a0f33e4535b7b0dd5a11586980~mv2.jpeg/v1/crop/x_28,y_28,w_518,h_443/fill/w_578,h_494,al_c,lg_1,q_80,enc_avif,quality_auto/IMG_9924.jpeg" alt="Ibrahim Feknous"
+            onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>IF</span></div>'"
+            onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>YB</span></div>'" />
+        </div>
+        <div class="sc-member-info"><h3>Yassa Beshai</h3><p>Treasurer & Senior Project Manager</p></div>
       </div>
+
       <div class="sc-member-card">
-        <div class="sc-member-photo"><img src="https://static.wixstatic.com/media/32beca_578aa1d7b6784022bc022474a59178e0~mv2.jpeg/v1/crop/x_175,y_939,w_1950,h_1815/fill/w_980,h_912,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1559.jpeg" alt="Ricardo Flores" onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>RF</span></div>'" /></div>
+        <div class="sc-member-photo">
+          <!-- Ricardo: suit and tie -->
+          <img src="https://static.wixstatic.com/media/32beca_f907684073ad4fe3b836bcdf60c98b89~mv2.jpeg/v1/crop/x_978,y_0,w_4113,h_3367/fill/w_672,h_550,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1776_JPEG.jpeg" alt="Mykola Radysh"
+            onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>RF</span></div>'" />
+        </div>
         <div class="sc-member-info"><h3>Ricardo Flores</h3><p>Secretary</p></div>
       </div>
+
+      <!-- Row 2 -->
       <div class="sc-member-card">
-        <div class="sc-member-photo"><img src="https://static.wixstatic.com/media/32beca_763d05c5eb4642aa9234f62938b721b4~mv2.png/v1/crop/x_735,y_379,w_1581,h_2113/fill/w_978,h_1307,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6800_heic.png" alt="Darian Sandoval" onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>DS</span></div>'" /></div>
+        <div class="sc-member-photo">
+          <!-- Darian: smiling casual -->
+          <img src="https://static.wixstatic.com/media/32beca_763d05c5eb4642aa9234f62938b721b4~mv2.png/v1/crop/x_735,y_379,w_1581,h_2113/fill/w_978,h_1307,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6800_heic.png" alt="Darian Sandoval"
+            onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>DS</span></div>'" />
+        </div>
         <div class="sc-member-info"><h3>Darian Sandoval</h3><p>Electronics Team Lead</p></div>
       </div>
+
       <div class="sc-member-card">
-        <div class="sc-member-photo"><img src="https://static.wixstatic.com/media/32beca_f0925770a0e244299ab7eb1cd2471f55~mv2.jpeg/v1/crop/x_23,y_231,w_290,h_318/fill/w_354,h_388,al_c,lg_1,q_80,enc_avif,quality_auto/IMG_9126.jpeg" alt="Jude Lahage" onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>JL</span></div>'" /></div>
+        <div class="sc-member-photo">
+          <!-- Jude: graduation cap -->
+          <img src="https://static.wixstatic.com/media/32beca_f0925770a0e244299ab7eb1cd2471f55~mv2.jpeg/v1/crop/x_23,y_231,w_290,h_318/fill/w_354,h_388,al_c,lg_1,q_80,enc_avif,quality_auto/IMG_9126.jpeg" alt="Jude Lahage"
+            onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>JL</span></div>'" />
+        </div>
         <div class="sc-member-info"><h3>Jude Lahage</h3><p>Software Team Lead</p></div>
       </div>
+
       <div class="sc-member-card">
-        <div class="sc-member-photo"><img src="https://static.wixstatic.com/media/32beca_3727e8b20cad40c7a26332ca147718dd~mv2.jpeg/v1/crop/x_0,y_500,w_813,h_830/fill/w_813,h_830,al_c,q_85,enc_avif,quality_auto/IMG_8043.jpeg" alt="Daniel Wensuslaus" onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>DW</span></div>'" /></div>
+        <div class="sc-member-photo">
+          <!-- Daniel: sunglasses outdoor -->
+          <img src="https://static.wixstatic.com/media/32beca_3727e8b20cad40c7a26332ca147718dd~mv2.jpeg/v1/crop/x_0,y_500,w_813,h_830/fill/w_813,h_830,al_c,q_85,enc_avif,quality_auto/IMG_8043.jpeg" alt="Daniel Wensuslaus"
+            onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>DW</span></div>'" />
+        </div>
         <div class="sc-member-info"><h3>Daniel Wensuslaus</h3><p>Mechanics Team Lead</p></div>
       </div>
+
       <div class="sc-member-card">
-        <div class="sc-member-photo"><img src="https://static.wixstatic.com/media/32beca_ae144c2831e34acfa82bef7374aa99be~mv2.jpg/v1/crop/x_164,y_0,w_868,h_791/fill/w_826,h_753,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6579.jpg" alt="Nehasai Karamsetty" onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>NK</span></div>'" /></div>
+        <div class="sc-member-photo">
+          <!-- Nehasai: woman, white background -->
+          <img src="https://static.wixstatic.com/media/32beca_ae144c2831e34acfa82bef7374aa99be~mv2.jpg/v1/crop/x_164,y_0,w_868,h_791/fill/w_826,h_753,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6579.jpg" alt="Nehasai Karamsetty"
+            onerror="this.parentElement.innerHTML='<div class=\'sc-member-photo-placeholder\'><span>NK</span></div>'" />
+        </div>
         <div class="sc-member-info"><h3>Nehasai Karamsetty</h3><p>Business Team Lead</p></div>
       </div>
+
     </div>
   </section>
 
   <div class="sc-divider"></div>
 
+  <!-- SUBTEAMS -->
   <section class="sc-section">
     <div class="sc-section-label">Structure</div>
     <h2>The subteams</h2>
     <div class="sc-subteams">
+
       <div class="sc-subteam-card">
-        <div class="sc-subteam-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 5h12M3 9h8M3 13h5" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round"/><circle cx="14" cy="12" r="3" stroke="#C0392B" stroke-width="1.3"/></svg></div>
+        <div class="sc-subteam-icon" style="background:var(--red-light);">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 5h12M3 9h8M3 13h5" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round"/><circle cx="14" cy="12" r="3" stroke="#C0392B" stroke-width="1.3"/></svg>
+        </div>
         <h3>Electronics</h3>
         <p>Responsible for all main electronic components — the central control unit, electric motors, solar panels, battery management system, sensors, wiring, and competition repairs.</p>
       </div>
+
       <div class="sc-subteam-card">
-        <div class="sc-subteam-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="10" rx="2" stroke="#C0392B" stroke-width="1.3"/><path d="M7 8h4M7 11h2" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        <div class="sc-subteam-icon" style="background:var(--red-light);">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="10" rx="2" stroke="#C0392B" stroke-width="1.3"/><path d="M7 8h4M7 11h2" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
         <h3>Software</h3>
         <p>Writes firmware for microcontrollers, runs aerodynamic simulations, connects sensor data to the central display, handles safety systems, and manages remote communication.</p>
       </div>
+
       <div class="sc-subteam-card">
-        <div class="sc-subteam-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="5.5" cy="13.5" r="2" stroke="#C0392B" stroke-width="1.3"/><circle cx="13.5" cy="13.5" r="2" stroke="#C0392B" stroke-width="1.3"/><path d="M3.5 13.5H2V8l3-4h8l2 4v5.5h-1.5" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="13.5" x2="11.5" y2="13.5" stroke="#C0392B" stroke-width="1.3"/></svg></div>
+        <div class="sc-subteam-icon" style="background:var(--red-light);">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="5.5" cy="13.5" r="2" stroke="#C0392B" stroke-width="1.3"/><circle cx="13.5" cy="13.5" r="2" stroke="#C0392B" stroke-width="1.3"/><path d="M3.5 13.5H2V8l3-4h8l2 4v5.5h-1.5" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="13.5" x2="11.5" y2="13.5" stroke="#C0392B" stroke-width="1.3"/></svg>
+        </div>
         <h3>Mechanics</h3>
         <p>Handles all mechanical and structural components — chassis, brakes, steering, suspension, fluids, canopy, and underside — through CAD design, materials management, and stress testing.</p>
       </div>
+
       <div class="sc-subteam-card">
-        <div class="sc-subteam-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3v4M9 11v4M3 9h4M11 9h4" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round"/><circle cx="9" cy="9" r="2" stroke="#C0392B" stroke-width="1.3"/></svg></div>
+        <div class="sc-subteam-icon" style="background:var(--red-light);">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3v4M9 11v4M3 9h4M11 9h4" stroke="#C0392B" stroke-width="1.3" stroke-linecap="round"/><circle cx="9" cy="9" r="2" stroke="#C0392B" stroke-width="1.3"/></svg>
+        </div>
         <h3>Business</h3>
         <p>Manages finances, social media, sponsor relations, club communications, website and blog updates, and team apparel and merchandise.</p>
       </div>
+
     </div>
   </section>
 
   <div class="sc-divider"></div>
 
+  <!-- FOOTER -->
   <footer class="sc-footer">
     <div class="sc-footer-left">
       <strong>NJIT Solar Car Team</strong><br>
@@ -155,9 +238,5 @@
   </footer>
 
 </div>
-<script>
-  function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow='hidden'; }
-  function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow=''; }
-</script>
 </body>
 </html>
